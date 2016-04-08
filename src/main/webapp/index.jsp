@@ -14,7 +14,7 @@
     <h1>Prime Number Calculator</h1>
 
     <form method="POST">
-        Number: <input type="number" name="number">
+        Number: <input type="number" name="number" required>
         <input type="submit" value="Check"/>
     </form>
 
