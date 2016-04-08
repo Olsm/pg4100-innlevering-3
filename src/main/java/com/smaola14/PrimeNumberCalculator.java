@@ -4,12 +4,18 @@ import static org.apache.commons.math3.primes.Primes.isPrime;
 
 public class PrimeNumberCalculator {
 
-    public boolean isPrimeNumber(int n) {
-        return isPrime(n);
+    public String isPrimeToString(String number) {
+        try {
+            if (isPrimeNumber(number))
+                return number + " is prime";
+        } catch (NumberFormatException e) {
+            return "Invalid input, you must enter a number!";
+        }
+        return number + " is not prime";
     }
 
     public boolean isPrimeNumber(String s) {
         int n = Integer.parseInt(s);
-        return isPrimeNumber(n);
+        return isPrime(n);
     }
 }

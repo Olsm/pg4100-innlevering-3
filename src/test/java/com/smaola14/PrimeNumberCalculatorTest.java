@@ -14,14 +14,29 @@ public class PrimeNumberCalculatorTest {
     }
 
     @Test
+    public void testIsPrimeNumberToStringPrime() {
+        assertEquals("2 is prime", pnc.isPrimeToString("2"));
+    }
+
+    @Test
+    public void testIsPrimeNumberToStringNotPrime() {
+        assertEquals("1 is not prime", pnc.isPrimeToString("1"));
+    }
+
+    @Test
+    public void testIsPrimeNumberToStringInvalid() {
+        assertEquals("Invalid input, you must enter a number!", pnc.isPrimeToString("test"));
+    }
+
+    @Test
     public void testIsPrimeNumber() {
-        assertTrue(pnc.isPrimeNumber(2));
+        assertTrue(pnc.isPrimeNumber("2"));
     }
 
     @Test
     public void testIsNotPrimeNumber() {
-        assertFalse(pnc.isPrimeNumber(1));
-        assertFalse(pnc.isPrimeNumber(4));
+        assertFalse(pnc.isPrimeNumber("1"));
+        assertFalse(pnc.isPrimeNumber("4"));
     }
 
     @Test
@@ -31,7 +46,7 @@ public class PrimeNumberCalculatorTest {
 
     @Test
     public void testIllegalArgument() {
-        Throwable exception = exceptionThrownBy(() -> pnc.isPrimeNumber("one"));
+        Throwable exception = exceptionThrownBy(() -> pnc.isPrimeNumber("test"));
         assertEquals(NumberFormatException.class, exception.getClass());
     }
 }
