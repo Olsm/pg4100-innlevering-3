@@ -25,7 +25,9 @@ public class PrimeNumberCalculatorTest {
 
     @Test
     public void testIsPrimeNumberToStringInvalid() {
-        assertEquals("Invalid input, you must enter a number!", pnc.isPrimeToString("test"));
+        assertEquals("Invalid input, please enter a number between "
+                + Integer.MIN_VALUE + " and " + Integer.MAX_VALUE,
+                pnc.isPrimeToString("test"));
     }
 
     @Test
@@ -36,11 +38,6 @@ public class PrimeNumberCalculatorTest {
     @Test
     public void testIsPrimeNumberToStringEmpty() {
         assertEquals("Empty input, please enter a number.", pnc.isPrimeToString(""));
-    }
-
-    @Test
-    public void testIsPrimeNumberToStringTooLarge() {
-        assertEquals("Number must be less than 2147483648!", pnc.isPrimeToString("2147483648"));
     }
 
     @Test

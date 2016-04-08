@@ -9,14 +9,12 @@ public class PrimeNumberCalculator {
         if (number.isEmpty()) return "Empty input, please enter a number.";
 
         try {
-            if (Long.parseLong(number) > 2147483647)
-                return "Number must be less than 2147483648!";
-
             if (isPrimeNumber(number))
                 return number + " is prime";
 
         } catch (NumberFormatException e) {
-            return "Invalid input, you must enter a number!";
+            return "Invalid input, please enter a number between "
+                    + Integer.MIN_VALUE + " and " + Integer.MAX_VALUE;
         }
 
         return number + " is not prime";
