@@ -5,6 +5,8 @@ import static org.apache.commons.math3.primes.Primes.isPrime;
 public class PrimeNumberCalculator {
 
     public String isPrimeToString(String number) {
+        if (number == null) return "";
+        if (number.isEmpty()) return "Empty input, please enter a number!";
         try {
             if (isPrimeNumber(number))
                 return number + " is prime";

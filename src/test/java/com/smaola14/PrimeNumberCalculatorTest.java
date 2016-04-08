@@ -29,6 +29,17 @@ public class PrimeNumberCalculatorTest {
     }
 
     @Test
+    public void testIsPrimeNumberToStringNull() {
+        assertEquals("", pnc.isPrimeToString(null));
+    }
+
+    @Test
+    public void testIsPrimeNumberToStringEmpty() {
+        assertEquals("Empty input, please enter a number!", pnc.isPrimeToString(""));
+    }
+
+
+    @Test
     public void testIsPrimeNumber() {
         assertTrue(pnc.isPrimeNumber("2"));
     }
