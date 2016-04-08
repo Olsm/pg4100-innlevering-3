@@ -3,6 +3,7 @@ package com.smaola14;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static com.github.stefanbirkner.fishbowl.Fishbowl.*;
 
 public class PrimeNumberCalculatorTest {
     private static PrimeNumberCalculator pnc;
@@ -23,5 +24,9 @@ public class PrimeNumberCalculatorTest {
         assertFalse(pnc.isPrimeNumber(4));
     }
 
-    // Add tests for invalid input
+    @Test
+    public void testIllegalArgument() {
+        Throwable exception = exceptionThrownBy(() -> pnc.isPrimeNumber("one"));
+        assertEquals(IllegalArgumentException.class, exception.getClass());
+    }
 }
