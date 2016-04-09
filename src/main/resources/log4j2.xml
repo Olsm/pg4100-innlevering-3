@@ -5,7 +5,7 @@
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
 
-        <File name="requests" fileName="logs/requests.log">
+        <File name="requests" fileName="${sys:catalina.base}/logs/requests.log">
             <PatternLayout pattern="%d{yyyy-mm-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
             <Filters>
                 <!-- Deny warn, error and fatal messages -->
@@ -15,7 +15,7 @@
             </Filters>
         </File>
 
-        <File name="errors" fileName="logs/errors.log">
+        <File name="errors" fileName="${sys:catalina.base}/logs/errors.log">
             <PatternLayout pattern="%d{yyyy-mm-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
     </appenders>
