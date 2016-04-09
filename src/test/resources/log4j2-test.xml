@@ -4,27 +4,11 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-
-        <File name="requests" fileName="${sys:catalina.base}/logs/requests.log">
-            <PatternLayout pattern="%d{yyyy-mm-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-            <Filters>
-                <!-- Deny warn, error and fatal messages -->
-                <ThresholdFilter level="warn"  onMatch="DENY" onMismatch="NEUTRAL"/>
-                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
-                <ThresholdFilter level="fatal" onMatch="DENY" onMismatch="NEUTRAL"/>
-            </Filters>
-        </File>
-
-        <File name="errors" fileName="${sys:catalina.base}/logs/errors.log">
-            <PatternLayout pattern="%d{yyyy-mm-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-        </File>
     </appenders>
 
     <loggers>
         <root level="all">
             <appender-ref ref="Console" level="all"/>
-            <appender-ref ref="requests" level="info"/>
-            <appender-ref ref="errors" level="error"/>
         </root>
     </loggers>
 </configuration>
