@@ -1,7 +1,8 @@
 <%@ page import="com.smaola14.PrimeNumberCalculator" %>
 
 <%  PrimeNumberCalculator calc = new PrimeNumberCalculator();
-    String number = request.getParameter("number"); %>
+    String number = request.getParameter("number");
+    if (request.getMethod().equals("GET")) number = null; %>
 
 <!DOCTYPE html>
 
@@ -13,7 +14,7 @@
 <body>
     <h1>Prime Number Calculator</h1>
 
-    <form method="POST">
+    <form action="/" method="POST">
         Number: <input type="number" name="number" required
                        min="<%=Integer.MIN_VALUE%>" max="<%=Integer.MAX_VALUE%>">
         <input type="submit" value="Check"/>
