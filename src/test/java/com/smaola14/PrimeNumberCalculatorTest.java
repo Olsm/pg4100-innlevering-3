@@ -53,11 +53,6 @@ public class PrimeNumberCalculatorTest {
     }
 
     @Test
-    public void testStringIsPrimeNumber() {
-        assertTrue(pnc.isPrimeNumber("5"));
-    }
-
-    @Test
     public void testIllegalArgument() {
         Throwable exception = exceptionThrownBy(() -> pnc.isPrimeNumber("test"));
         assertEquals(NumberFormatException.class, exception.getClass());
