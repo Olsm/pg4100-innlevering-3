@@ -4,7 +4,7 @@
   <groupId>com.smaola14</groupId>
   <artifactId>PrimeNumberCalculator</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>PrimeNumberCalculator</name>
   <description>A Maven webapp that checks if a number is prime or not</description>
   <developers>
