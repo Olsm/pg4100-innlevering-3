@@ -14,7 +14,7 @@
 <body>
     <h1>Prime Number Calculator</h1>
 
-    <form action="/" method="POST">
+    <form action="/PrimeNumberCalculator/" method="POST">
         Number: <input type="number" name="number" required
                        min="<%=Integer.MIN_VALUE%>" max="<%=Integer.MAX_VALUE%>">
         <input type="submit" value="Check"/>

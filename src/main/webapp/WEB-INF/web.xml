@@ -1,5 +1,13 @@
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>Prime Number Calculator</display-name>
+  <servlet>
+    <servlet-name>PrimeNumberCalculator</servlet-name>
+    <jsp-file>/index.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PrimeNumberCalculator</servlet-name>
+    <url-pattern>/PrimeNumberCalculator/*</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>ErrorServlet</servlet-name>
     <servlet-class>com.smaola14.ErrorServlet</servlet-class>
