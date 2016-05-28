@@ -1,7 +1,8 @@
 <%@ page import="com.smaola14.PrimeNumberCalculator" %>
 
-<base href="${pageContext.request.contextPath}">
 <link href=<%= request.getContextPath() + "/css/style.css" %> rel="stylesheet" type="text/css">
+<%--https://fonts.googleapis.com/css?family=Raleway--%>
+<link href=<%= request.getContextPath() + "/css/raleway.css" %> rel='stylesheet' type='text/css'>
 
 <%  PrimeNumberCalculator calc = new PrimeNumberCalculator();
     String number = request.getParameter("number");
