@@ -6,7 +6,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>PrimeNumberCalculator</servlet-name>
-    <url-pattern>/PrimeNumberCalculator/*</url-pattern>
+    <url-pattern>/PrimeNumberCalculator/</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ErrorServlet</servlet-name>

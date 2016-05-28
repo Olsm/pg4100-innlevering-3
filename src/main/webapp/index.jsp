@@ -1,5 +1,8 @@
 <%@ page import="com.smaola14.PrimeNumberCalculator" %>
 
+<base href="${pageContext.request.contextPath}">
+<link href=<%= request.getContextPath() + "/css/style.css" %> rel="stylesheet" type="text/css">
+
 <%  PrimeNumberCalculator calc = new PrimeNumberCalculator();
     String number = request.getParameter("number");
     if (request.getMethod().equals("GET")) number = null; %>
@@ -15,12 +18,18 @@
     <h1>Prime Number Calculator</h1>
 
     <form action="/PrimeNumberCalculator/" method="POST">
-        Number: <input type="number" name="number" required
-                       min="<%=Integer.MIN_VALUE%>" max="<%=Integer.MAX_VALUE%>">
-        <input type="submit" value="Check"/>
+        <input type="number" id="input" name="number" placeholder="number..."
+               min="<%=Integer.MIN_VALUE%>" max="<%=Integer.MAX_VALUE%>" required>
+        <input type="submit" class="btnCheck" value="Check"/>
     </form>
 
-    <br><%= calc.isPrimeToString(number) %>
+    <% String result = calc.isPrimeToString(number);
+        String color = "red";
+        if (result.contains("is prime"))
+            color = "green"; %>
+
+    <div id="result" class=<%=color%>><%=result%></div>
+
 </body>
 
 </html>
